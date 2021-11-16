@@ -1,4 +1,4 @@
-public class linkedList {
+public class linkedListInsert {
     class Node {
         int data;
         Node next;
@@ -49,7 +49,7 @@ public class linkedList {
     }
     
     public static void main(String args[]) {
-        linkedList llist = new linkedList();
+        linkedListInsert llist = new linkedListInsert();
         
         llist.push(5);
         llist.push(4);
