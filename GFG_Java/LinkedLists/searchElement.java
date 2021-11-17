@@ -26,7 +26,7 @@ public class searchElement {
 		System.out.println();
 	}
 
-	public boolean search(int element){
+	public boolean searchIterative(int element){
 		Node temp = head;
 		while(temp != null) {
 			if(temp.data == element)
@@ -34,6 +34,14 @@ public class searchElement {
 			temp = temp.next;
 		}
 		return false;
+	}
+
+	public boolean searchRecursive(Node temp, int element) {
+		if(temp == null)
+				return false;
+		if(temp.data == element)
+				return true;
+		return searchRecursive(temp.next, element);
 	}
 
 	public static void main(String args[]) {
@@ -44,9 +52,24 @@ public class searchElement {
 		llist.push(12);
 		llist.push(11);
 		llist.printList();
-		if(llist.search(14))
-				System.out.println("Element 14 is present in the linked list");
+		if(llist.searchIterative(14))
+				System.out.println("SearchIterative: Element 14 is present in the linked list");
 		else
-				System.out.println("Element 14 is not present in the linked list");
+				System.out.println("SearchIterative: Element 14 is not present in the linked list");
+		
+		if(llist.searchRecursive(llist.head, 14))
+				System.out.println("SearchRecursive: Element 14 is present in the linked list");
+		else
+				System.out.println("SearchRecursive: Element 14 is not present in the linked list");
+		
+		if(llist.searchIterative(16))
+				System.out.println("SearchIterative: Element 14 is present in the linked list");
+		else
+				System.out.println("SearchIterative: Element 14 is not present in the linked list");
+		
+		if(llist.searchRecursive(llist.head, 16))
+				System.out.println("SearchRecursive: Element 14 is present in the linked list");
+		else
+				System.out.println("SearchRecursive: Element 14 is not present in the linked list");
 	}
 }
