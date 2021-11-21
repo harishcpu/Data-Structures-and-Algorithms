@@ -24,57 +24,26 @@ public class reverseNNodes {
 		}
 		System.out.println();
 	}
-
-	Node curr = null;
-	Node next = null;
-	Node prev = null;
-	public Node reverse(int n, boolean iter) {
-		Node first = curr;
-		
-		System.out.println("On entering: \ncurr" + curr.data);
-		if(prev != null)
-			System.out.println("prev " + prev.data);
-		else
-			System.out.println("prev : null");
-		if(next != null)
-			System.out.println("next " + curr.data);
-		else
-			System.out.println("next : null");
-		while(n-- != 0 && curr != null) {
+	
+    public Node reverseNodes(Node temp, int k) {
+		if(temp == null)
+			return null;
+		Node curr = temp;
+		Node next = null, prev = null;
+		int count = 0;
+		while(curr != null && count < k) {
 			next = curr.next;
 			curr.next = prev;
 			prev = curr;
 			curr = next;
+			count++;
 		}
-		if(iter)
-			first.next = next;
-		System.out.println("On exiting: \ncurr" + curr.data);
-		System.out.println("prev " + prev.data);
-		System.out.println("next " + curr.data);
+		
+		if(next != null)
+			temp.next = reverseNodes(next, k);
+		
 		return prev;
-	}
-
-	public Node reverseNodes(Node temp, int n) {
-		curr = temp;
-		boolean iter = true;
-		while(curr != null && curr.next != null) {
-			if(iter) {
-				temp = reverse(n, true);
-				curr = temp.next;
-				iter = false;
-		System.out.println("Back: \ncurr" + curr.data);
-		System.out.println("prev " + prev.data);
-		System.out.println("next " + curr.data);
-				printList(temp);
-			} else {
-				curr = reverse(n, false);
-				curr = null;
-			}
-		}
-		curr.next = null;
-		return temp;
-	}
-	
+	}	
 	public static void main(String args[]) {
 		reverseNNodes llist = new reverseNNodes();
 		llist.push(15);
