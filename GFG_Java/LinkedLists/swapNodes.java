@@ -30,7 +30,6 @@ public class swapNodes {
 	}
 
 	public void swapNodesByAddress(int a, int b) {
-		//TODO: there is an issue while swapping first and last node.
 		if(a == b)
 			return;
 
@@ -47,15 +46,19 @@ public class swapNodes {
 			nodeB = nodeB.next;
 		}
 
-		if(prevA == null)
-			head = prevB.next;
-		else
-			prevA.next = nodeB;
-
-		if(prevB == null)
-			head = prevA.next;
-		else
+		if(prevA == null) {
 			prevB.next = nodeA;
+			head = nodeB;
+		} else {
+			prevA.next = nodeB;
+		}
+
+		if(prevB == null) {
+			prevA.next = nodeB;
+			head = nodeA;
+		} else {
+			prevB.next = nodeA;
+		}
 
 		Node temp = nodeA.next;
 		nodeA.next = nodeB.next;
@@ -73,6 +76,10 @@ public class swapNodes {
 		llist.swapNodesByAddress(3, 4);
 		llist.printList(llist.head);
 		llist.swapNodesByAddress(1, 5);
+		llist.printList(llist.head);
+		llist.swapNodesByAddress(1, 3);
+		llist.printList(llist.head);
+		llist.swapNodesByAddress(2, 5);
 		llist.printList(llist.head);
 		System.out.println();
 	}
