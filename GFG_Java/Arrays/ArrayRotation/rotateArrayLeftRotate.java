@@ -1,4 +1,7 @@
-public class rotateArray {	
+/*
+ * Method: Rotate one by one 
+ */
+public class rotateArray01 {	
 
 	public void leftRotateByOne(int arr[], int n) {
 		int i = 0;
@@ -21,7 +24,7 @@ public class rotateArray {
 		System.out.println();
 	}
 	public static void main(String args[]) {
-		rotateArray rotate = new rotateArray();
+		rotateArray01 rotate = new rotateArray01();
 		int arr[] = {1, 2, 3, 4, 5, 6, 7};
 		rotate.printArray(arr, 7);
 		rotate.leftRotate(arr, 2, 7);
