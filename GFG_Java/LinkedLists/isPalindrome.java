@@ -39,7 +39,26 @@ public class isPalindrome {
 		left = left.next;
 		return ispal;
 	}
-	
+
+	public Node find_mid(Node head) {
+		Node fast = head;
+		Node slow = head;
+
+		while(fast != null && fast.next != null) {
+			fast = fast.next.next;
+			slow = slow.next;
+		}
+		return slow;
+	}
+
+	public boolean palindrome(Node head) {
+		// find mid
+		Node mid = find_mid(head);
+		// reverse half
+		reverse(mid.next);
+		//comapre nodes
+		
+	}	
 	public static void main(String args[]) {
 		isPalindrome llist = new isPalindrome();
 		llist.push(11);
