@@ -7,8 +7,14 @@
 /* Solution is incomplete */
 int square(int *arr, int n) {
 
-	int i =  n/2;
-	int j = i + 1;
+	int i =  0;
+	for (; i < n; i++) {
+		if (arr[i] > 0)
+			break;
+	}
+	
+	int j = i;
+	i = i - 1;
 	int idx = 0;
 	
 	int temp[6] = {-1};
@@ -24,7 +30,7 @@ int square(int *arr, int n) {
 	
 	while(i >= 0) {
 		temp[idx++] = arr[i] * arr[i];
-		i--;
+		--i;
 	}
 	
 	while(j < n) {
