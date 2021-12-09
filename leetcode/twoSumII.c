@@ -12,7 +12,7 @@ int* twoSum(int* numbers, int numbersSize, int target, int* returnSize){
     if(numbersSize == 0 || numbers == NULL)
         return NULL;
     
-    while(numbers[j] > target) j--;
+    while(numbers[j] > target)	j--;
     
     int k;
     while(i < j) {
@@ -22,7 +22,11 @@ int* twoSum(int* numbers, int numbersSize, int target, int* returnSize){
                 break;
             k--;
         }
-        i++;
+        
+		if(i >= k)
+			i++;
+		else
+			break;
     }
     
     if(i >= j)
