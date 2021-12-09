@@ -26,7 +26,7 @@ char *reverseWords(char *s) {
     return s;
 }
 int main(int argc, char *argv[]) {
-	char *s = "hello, world!";
+	char s[] = {'h','e','l','l','o',',',' ','w','o','r','l','d','!'};
 	printf("Before reversing: %s\n", s);
 	reverseWords(s);
 	printf("After reversing: %s\n", s);

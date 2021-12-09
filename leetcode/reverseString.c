@@ -11,7 +11,7 @@ void reverseString(char *s, int sSize) {
 }
 
 int main(int argc, char *argv[]) {
-	char *s = "hello";
+	char s[] = {'h', 'e', 'l', 'l', 'o'};
 	printf("Before reversing: %s\n", s);
 	reverseString(s, strlen(s));
 	printf("After reversing: %s\n", s);
