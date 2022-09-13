@@ -8,6 +8,6 @@ public:
     int majorityElement(vector<int>& nums) {
         
         sort(nums.begin(), nums.end());
-        return nums[nums.size()/2];
+        return nums[nums.size()/2];    // Since the majority element will be present more than n/2 times, it should be present in the index n/2. 
     }
 };
